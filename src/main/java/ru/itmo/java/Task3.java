@@ -56,8 +56,9 @@ public class Task3 {
             String lowerCaseInput = input.toLowerCase();
             int numberOfAB = 0;
             for (int i = 0; i < input.length(); i++) {
-                if (lowerCaseInput.charAt(i) == 'a' || lowerCaseInput.charAt(i) == 'b')
+                if (lowerCaseInput.charAt(i) == 'a' || lowerCaseInput.charAt(i) == 'b') {
                     numberOfAB++;
+                }
             }
             return numberOfAB * 100 / input.length();
         } catch (Exception e) {
@@ -71,8 +72,9 @@ public class Task3 {
     boolean isPalindrome(String input) {
         try {
             for (int i = 0; i < input.length() / 2; i++) {
-                if (input.charAt(i) != input.charAt(input.length() - 1 - i))
+                if (input.charAt(i) != input.charAt(input.length() - 1 - i)) {
                     return false;
+                }
             }
             return true;
         } catch (Exception e) {
@@ -120,9 +122,11 @@ public class Task3 {
             char[] secondChars = two.toCharArray();
             Arrays.sort(firstChars);
             Arrays.sort(secondChars);
-            for (int i = 0; i < firstChars.length; i++)
-                if (firstChars[i] != secondChars[i])
+            for (int i = 0; i < firstChars.length; i++) {
+                if (firstChars[i] != secondChars[i]) {
                     return false;
+                }
+            }
             return true;
         } catch (Exception e) {
             return false;
@@ -136,12 +140,14 @@ public class Task3 {
      */
     boolean isUniqueString(String s) {
         try {
-            if (s.length() == 0)
+            if (s.length() == 0) {
                 return false;
+            }
             boolean[] unique = new boolean[1 << 16];
             for (int i = 0; i < s.length(); i++) {
-                if (unique[s.charAt(i)] == true)
+                if (unique[s.charAt(i)]) {
                     return false;
+                }
                 unique[s.charAt(i)] = true;
             }
             return true;
@@ -181,8 +187,9 @@ public class Task3 {
      */
     String concatWithSeparator(String[] inputStrings, Character separator) {
         try {
-            if (separator == null)
+            if (separator == null) {
                 separator = ' ';
+            }
             StringBuilder stringBuilder = new StringBuilder();
             stringBuilder.append(inputStrings[0]);
             for (int i = 1; i < inputStrings.length; i++) {
@@ -201,8 +208,9 @@ public class Task3 {
         try {
             int counter = 0;
             for (String s : inputStrings) {
-                if (s.startsWith(prefix))
+                if (s.startsWith(prefix)) {
                     counter++;
+                }
             }
             return counter;
         } catch (Exception e) {
