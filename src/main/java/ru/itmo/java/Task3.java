@@ -116,8 +116,9 @@ public class Task3 {
      */
     boolean isPermutation(String one, String two) {
         try {
-            if (one.length() == 0)
+            if (one.length() == 0) {
                 return false;
+            }
             char[] firstChars = one.toCharArray();
             char[] secondChars = two.toCharArray();
             Arrays.sort(firstChars);
